@@ -1,6 +1,20 @@
+body{
+    /* overflow-x: hidden; */
+}
+
+body{
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
 header{
     position: fixed;
     inset: 0 0 auto 0;
+    background-color: #fff;
+    padding: 20px 25px 20px 25px;
 }
 
 header h1{
@@ -8,17 +22,42 @@ header h1{
 }
 
 header img{
-    height:34px !important;
+    height:34px ;
 }
 
-.create{
+.arrows1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrows1 i{
+    opacity: 1;
+    margin: 25px 25px 25px 25px;
+    cursor: pointer;
+    color: #ff8000;
+}
+
+.arrows1 i:hover{
+    opacity: 0.5;
+} 
+
+.create, .join {
+    /* width: 100%; */
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;     
 }
 
-.create h1{
+.create{
+    transition-timing-function: ease-in-out;
+    transition: 5s;
+    display: none;
+}
+
+.create h1, .join h1{
     text-align: center;
     width: 100%;
     font-family: "Roboto",sans-serif;
@@ -27,13 +66,13 @@ header img{
 }
 
 @media  (max-width:690px) {
-    .create h1{
+    .create h1, .join h1{
         font-size: 35px;
     }
     
 }
 
-.create p{
+.create p, .join p{
     text-align: center;
     width: 100%;
     font-family: "Roboto",sans-serif;
@@ -43,9 +82,44 @@ header img{
     margin-bottom: 40px;
 }
 
-#templates img{
-    width: 100%;
-    height: 100vh;
+.templateInfo{
+    display: flex;
+    justify-content: left;
+    /* justify-content: space-between; */
+}
+
+.templateInfo h1{
+    font-size: 50px;
+    line-height: 57px;
+    font-weight: 80px;
+    width: 300px;
+}
+
+.templateInfo p{
+    margin-left: 150px;
+    width: 450px;
+}
+
+.templates{
+    display: grid;
+    margin: 50px;
+    /* width: 100%; */
+    /* overflow-x: hidden; */
+    /* margin: 30px; */
+    grid-template-columns: auto auto auto;
+    column-gap: 100px;
+    row-gap: 100px;
+    height: 400px;
+}
+
+.templates img{
+    /* width: 100%; */
+    /* margin: 50px; */
+    /* width: 100vw; */
+    /* height: 100vh; */
+    height: 400px;
     object-fit: cover;
     object-position: top;
 }
+
+
